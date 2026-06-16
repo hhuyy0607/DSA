@@ -1,0 +1,45 @@
+# Bài 25. Chứng minh tính đúng đắn của Insertion Sort
+
+## Bất biến vòng lặp
+
+Trước mỗi vòng lặp ngoài thứ i (i từ 1 đến n−1), đoạn a[0..i−1] chứa đúng các phần tử ban đầu của mảng và đã được sắp xếp theo thứ tự tăng dần.
+
+## Chứng minh
+
+### 1. Khởi tạo
+
+Ở vòng lặp đầu tiên (i = 1):
+
+- a[0] chỉ có 1 phần tử
+- Một phần tử luôn được coi là đã sắp xếp
+
+⇒ Bất biến đúng.
+
+### 2. Duy trì
+
+Giả sử trước vòng lặp i:
+
+a[0..i−1] đã được sắp xếp tăng dần.
+
+Khi chạy vòng i:
+
+- lấy a[i] (key)
+- dịch các phần tử lớn hơn sang phải
+- chèn key vào đúng vị trí
+
+⇒ a[0..i] vẫn tăng dần
+
+### 3. Kết thúc
+
+Khi i = n:
+
+- toàn bộ mảng a[0..n−1] đã được sắp xếp
+
+⇒ thuật toán đúng
+
+## Kết luận
+
+Insertion Sort đúng vì:
+- luôn giữ đoạn đầu đã sắp xếp
+- chèn phần tử mới vào đúng vị trí
+- kết thúc thì toàn mảng được sắp xếp
