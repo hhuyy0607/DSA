@@ -1,0 +1,64 @@
+# Bài 25. Chứng minh tính đúng đắn của Selection Sort
+
+## Bất biến vòng lặp
+
+Sau vòng lặp thứ i, đoạn a[0..i] chứa i + 1 phần tử nhỏ nhất của mảng và được sắp xếp theo thứ tự tăng dần.
+
+## Chứng minh
+
+### 1. Khởi tạo
+
+Ở vòng lặp đầu tiên (i = 0), thuật toán tìm phần tử nhỏ nhất của toàn bộ mảng và đưa về vị trí a[0].
+
+Do đó:
+
+* a[0] là phần tử nhỏ nhất của mảng.
+* Bất biến đúng.
+
+### 2. Duy trì
+
+Giả sử sau vòng lặp thứ i - 1:
+
+a[0..i-1]
+
+đã chứa đúng i phần tử nhỏ nhất theo thứ tự tăng dần.
+
+Ở vòng lặp thứ i:
+
+* thuật toán tìm phần tử nhỏ nhất trong đoạn a[i..n-1]
+* rồi đưa phần tử đó về vị trí a[i]
+
+Khi đó:
+
+* a[0..i] sẽ chứa i + 1 phần tử nhỏ nhất
+* và vẫn đúng thứ tự tăng dần.
+
+⇒ Bất biến tiếp tục đúng.
+
+### 3. Kết thúc
+
+Thuật toán kết thúc khi:
+
+i = n - 1
+
+Lúc này:
+
+* toàn bộ mảng a[0..n-1] đã được sắp xếp tăng dần.
+
+⇒ Thuật toán đúng.
+
+## Kết luận
+
+Selection Sort luôn:
+
+* chọn phần tử nhỏ nhất của phần chưa sắp xếp
+* đưa về đúng vị trí
+
+Sau mỗi vòng:
+
+* phần đầu mảng đã được sắp xếp cố định.
+
+Vì vậy:
+
+* thuật toán đúng
+* và luôn dừng.
